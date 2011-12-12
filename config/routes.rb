@@ -20,6 +20,7 @@ SampleApp110811::Application.routes.draw do
   match '/newprodgrp', :to => 'products#new'
   match '/newprodgroup', :to => 'product_groups#new'
   match '/signin', :to => 'sessions#create'
+  match '/prodgrpind', :to => 'product_groups#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

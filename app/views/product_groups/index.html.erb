@@ -1,25 +1,107 @@
-<h1>Listing product_groups</h1>
+<!DOCTYPE html>
+<head>
+  <%@title = "HOME"%>
+  <%= render 'layouts/stylesheets' %>
+  <%= csrf_meta_tags %>
+  
+  
+  
+  <div id="welcome_word"><h2>
+    Welcome <span class="blue"><%= current_user.name%></span>, create your new offer <span class="red bold"></span> down below:</h2></div>
+    
+    <div id="logout"> <%= link_to 'Logout',  '/signout', :class => 'button' %></div>  
+ 
+<title>Home</title>
+</head>
 
-<table>
-  <tr>
-    <th>Prodgrpid</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<body>
+ <%= stylesheet_link_tag 'home_style.css', :media => 'screen' %>
+ <%= stylesheet_link_tag 'index_style.css', :media => 'screen' %>
 
-<% @product_groups.each do |product_group| %>
-  <tr>
-    <td><%= product_group.prodgrpid %></td>
-    <td><%= product_group.name %></td>
-    <td><%= link_to 'Show', product_group %></td>
-    <td><%= link_to 'Edit', edit_product_group_path(product_group) %></td>
-    <td><%= link_to 'Destroy', product_group, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <div id="nav_bar">
+  
+    <table id="search_table">
+      <tr>
+        <td width="160px" height="30px"></td>
+        <td style="padding-right: 10px"><input type="text" id="search_field" value=""></td>
+
+        <td width="100px" style="padding-left: 5px"><input type="submit" id="search_submit" class="button" value="Search" /></td>
+        <td width="200px"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div id="container">
+  <table width="100%">
+    <tr>
+      <td width="150px" valign="top"><div id="left">
+<%= image_tag('logo_50.png') %>
+          <div id="sidebar_border">
+            <div id="sidebar">
+              <ul id="menu_ul">
+                <!-- <div id="chtsht_div">
+<div class="li_border"><li class="menu_li"> <a link="#">My Cheetsheet</a></li></div>
+</div> -->
+                
+                    <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/prodgrpind">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last Seven Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 30 Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 90 Days</a></li></div>
+                   
+                   
+                  </ul>
+               
+             
+              </ul>
+            </div>
+          </div>
+        </div></td>
+      <td valign="top"><div id="right"><span class="blue">
+    Product Group Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Product Group ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  
+      <% @product_groups.each do |product_group| %>
+ <div class="button_white_long"><li class="menu_li"> <a href="<%= edit_product_group_path(product_group) %>">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= product_group.name %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=product_group.prodgrpid %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to 'Show',  product_group, :class => 'button' %>
+      <%= link_to 'Edit', edit_product_group_path(product_group), :class => 'button' %>
+     <%= link_to 'Destroy', product_group, :class => 'button' ,:confirm => 'Are you sure?', :method => :delete %></div>
+    
+
+ </a></li></div>
+ 
+  <% end %>
+      
+
+                  </div></td>
+                  
+    <div id="right_container"> </div>
+  </td>
+    </tr>
+ 
+
 </table>
+</div>
 
 <br />
+<center><%= link_to 'Create New Product Group', new_product_group_path, :class => 'button' %></center>
 
-<%= link_to 'New Product group', new_product_group_path %>
+</body>
+
+
+

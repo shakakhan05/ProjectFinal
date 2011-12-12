@@ -8,9 +8,9 @@
   
   <div id="welcome_word"><h2>
     Welcome <span class="blue"><%= current_user.name%></span>, create your new offer <span class="red bold"></span> down below:</h2></div>
-   
- <div id="logout"> <a href="/signout" class="signup_button round"><input type="button" class="button" value="Log out" id="logout_button"></div>
-
+    
+    <div id="logout"> <%= link_to 'Logout',  '/signout', :class => 'button' %></div>  
+ 
 <title>Home</title>
 </head>
 
@@ -44,10 +44,10 @@
 </div> -->
                 
                     <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
-                    <div class="button_white"><li class="menu_li"> <a href="/newprodgroup">Product Groups</a></li></div>
-                    <div class="li_border"><li class="menu_li"> <a link="/home">Past 7 Day Offer List</a></li></div>
-                    <div class="li_border"><li class="menu_li"> <a link="/home">Expiring Offers</a></li></div>
-                    <div class="li_border"><li class="menu_li"> <a link="/home">Starting Offers</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/prodgrpind">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last Seven Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 30 Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 90 Days</a></li></div>
                    
                   </ul>
                
@@ -56,13 +56,13 @@
             </div>
           </div>
         </div></td>
-      <td valign="top"><div id="right"><div class= "intro_text">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td valign="top"><div id="right"><span class="blue">
+    Product ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Start date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status&n<bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br></br>
-   </div>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  
        <% @offer.each do |offer| %>
  <div class="button_white_long"><li class="menu_li"> <a href="<%= edit_offer_path(offer) %>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=offer.prodgrpid %>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

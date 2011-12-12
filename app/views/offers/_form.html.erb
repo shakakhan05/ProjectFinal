@@ -19,24 +19,27 @@
 										
 									</tr>
   <div class="index_label" >
-    <%= f.label :prodgrpid %><br />
-    <%= f.number_field :prodgrpid %>
+  	
+    <%= f.label 'Product Groups' %><br />
+    <%= f.collection_select(:prodgrpid, @product_groups, :prodgrpid, :name, :prompt => true)%>
+    
   </div>
   <div class="index_label" >
-    <%= f.label :sDate %><br />
+    <%= f.label 'Start Date'%><br />
     <%= f.text_field :sDate %>
   </div>
   <div class="index_label" >
-    <%= f.label :eDate %><br />
+    <%= f.label 'End Date' %><br />
     <%= f.text_field :eDate %>
   </div>
  <div class="index_label" >
-    <%= f.label :Name %><br />
+    <%= f.label 'Offer Name' %><br />
     <%= f.text_field :Name %>
   </div>
  <div class="index_label" >
     <%= f.label :Status %><br />
-    <%= f.text_field :Status %>
+    <%= f.select(:Status, [['Testing'], ['Deployed']]) %>
+    
   </div>
   <div class="actions">
     <%= f.submit 'Create New Offer', :class => 'button' %>

@@ -3,6 +3,7 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     @offers = Offer.all
+    @product_groups = ProductGroup.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +26,7 @@ class OffersController < ApplicationController
   # GET /offers/new.json
   def new
     @offer = Offer.new
+    @product_groups = ProductGroup.all
 
     respond_to do |format|
       format.html # new.html.erb

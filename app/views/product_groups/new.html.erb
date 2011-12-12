@@ -8,10 +8,9 @@
   
     <div id="welcome_word"><h2>
     Welcome <span class="blue"><%= current_user.name%></span>, create your new offer <span class="red bold"></span> down below:</h2></div>
+   <div id="logout"> <%= link_to 'Logout',  '/signout', :class => 'button' %></div>
    
- <div id="logout"> <a href="/signout" class="signup_button round"><input type="button" class="button" value="Log out" id="logout_button"></div>
-
-<title>New Offer</title>
+<title>New Product Group</title>
 </head>
 
 <body>
@@ -43,11 +42,12 @@
                   <div class="li_border"><li class="menu_li"> <a link="#">My Cheetsheet</a></li></div>
                 </div> -->
                 
-                  <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
-                    <div class="button_white"><li class="menu_li"> <a href="/newprodgroup">Product Groups</a></li></div>
-					<div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
-                    <div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
-                    <div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/prodgrpind">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last Seven Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 30 Days</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Last 90 Days</a></li></div>
+                   
                   </ul>
                
              
