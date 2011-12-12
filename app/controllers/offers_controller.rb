@@ -37,6 +37,7 @@ class OffersController < ApplicationController
   # GET /offers/1/edit
   def edit
     @offer = Offer.find(params[:id])
+    @product_groups = ProductGroup.all
   end
 
   # POST /offers
