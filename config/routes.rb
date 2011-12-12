@@ -16,8 +16,8 @@ SampleApp110811::Application.routes.draw do
   match '/signup', :to => 'users#new'
   match '/signout', :to => 'sessions#destroy'
   match '/home', :to => 'pages#home'
-  match '/prodadd', :to =>  'products#new'
   match '/newoffer', :to => 'offers#new'
+  match '/newprodgrp', :to => 'products#new'
   match '/newprodgroup', :to => 'product_groups#new'
   match '/signin', :to => 'sessions#create'
 

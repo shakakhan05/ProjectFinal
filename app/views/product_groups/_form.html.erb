@@ -10,16 +10,23 @@
       </ul>
     </div>
   <% end %>
+  <center>
+						<div id="newuser_border" class="radius_super">
+							<div id="login_panel" class="radius_big">
+								<table width="100px">
+									<tr>
+										
+									</tr>
 
-  <div class="field">
+  <div class="index_label" >
     <%= f.label :prodgrpid %><br />
     <%= f.number_field :prodgrpid %>
   </div>
-  <div class="field">
+  <div class="index_label" >
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Product Group', :class => 'button' %>
   </div>
 <% end %>

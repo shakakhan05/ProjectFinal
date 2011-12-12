@@ -6,10 +6,10 @@
   
   
   
-  <div id="welcome_word">
-    <span class="blue">Welcome Manager</span>, create your new offer <span class="red bold"></span> down below:</div>
+    <div id="welcome_word"><h2>
+    Welcome <span class="blue"><%= current_user.name%></span>, create your new offer <span class="red bold"></span> down below:</h2></div>
    
-   <div id="logout"> <a class="signup_button round"><input type="button" class="button" value="Log out" id="logout_button"></div>
+ <div id="logout"> <a href="/signout" class="signup_button round"><input type="button" class="button" value="Log out" id="logout_button"></div>
 
 <title>New Offer</title>
 </head>
@@ -43,11 +43,11 @@
                   <div class="li_border"><li class="menu_li"> <a link="#">My Cheetsheet</a></li></div>
                 </div> -->
                 
-                  <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
-                    <div class="button_white"><li class="menu_li"> <a href="/newoffer">Product Groups</a></li></div>
-					<div class="li_border"><li class="menu_li"> <a link="/home">Past 7 Day Offer List</a></li></div>
-                    <div class="li_border"><li class="menu_li"> <a link="/home">Expiring Offers</a></li></div>
-                    <div class="li_border"><li class="menu_li"> <a link="/home">Starting Offers</a></li></div>
+               <div class="button_white"><li class="menu_li"> <a href="/newoffer">New Offer</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/newprodgroup">Product Groups</a></li></div>
+					<div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
+                    <div class="button_white"><li class="menu_li"> <a href="/home">Product Groups</a></li></div>
                   </ul>
                
              
@@ -69,7 +69,7 @@
 </table>
 </div>
 
-<br />
+<br/>
 
 
 </body>
